@@ -10,7 +10,7 @@ class QuestionService{
     async addQuestion(questionData){
 
         try{
-            let result = this.questionRepo.addQuestion(questionData);
+            let result = await this.questionRepo.addQuestion(questionData);
 
             if(result.questionText == questionData.questionText){
                 return {result:true,message:"Question is added"};
